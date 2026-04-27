@@ -1,0 +1,7 @@
+CREATE OR REPLACE FUNCTION search_contacts(q TEXT)
+RETURNS TABLE(name TEXT)
+AS $$
+BEGIN
+    RETURN QUERY SELECT name FROM contacts;
+END;
+$$ LANGUAGE plpgsql;
